@@ -1,0 +1,20 @@
+/**Пятое домашнее задание в рамках курса Java для начнающих.
+ * Создние экзепляра класса Condishka с передачей обязательніх параметров в конструктор
+ * @author Kulish Yulia
+ * @version 1.0
+ */
+public class Main1 {
+    /**Точка входа в класс и приложение
+     * @param args Массив строковых аргументов
+     */
+    public static void main(String[] args) {
+        /**Объект класса Condishka с переданными обязательными параметрами в конструктор
+         */
+        Condishka condishka = new Condishka((byte)56, "Samsung",  1,1,1);
+        /**Вызов метода для вывода переданых параметров в консоль
+         */
+        condishka.printCondishka();
+
+        }
+
+    }
