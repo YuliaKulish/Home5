@@ -1,0 +1,159 @@
+import java.util.Arrays;
+/**Пятое домашнее задание в рамках курса Java для  начинающих.
+ *Класс описывает кондиционер и его свойства
+ *
+ *@author Kulish Yulia
+ *@version 1.0
+ */
+public class Condishka {
+    private byte model;
+    private String mark;
+    private boolean display;
+    private char[] material;
+    private int length;
+    private int width;
+    private int height;
+    private double power;
+    private char typeRefrigerant;
+
+    /** Возможность получения параметра model вне класса
+     * @return model как номер модели
+     */
+    public byte getModel() {
+        return model;
+    }
+
+    /** Присвоение значения параметра model
+     * @param model передавать как числовое значение (2 цифры)
+     */
+    public void setModel(byte model) {
+        this.model = model;
+    }
+    /** Возможность получения параметра mark вне класса
+     * @return mark как строку
+     */
+    public String getMark() {
+        return mark;
+    }
+    /** Присвоение значения параметра mark
+     * @param mark передавать как строку
+     */
+    public void setMark(String mark) {
+        this.mark = mark;
+    }
+    /** Возможность получения параметра display вне класса
+     * @return display как значение true/false
+     */
+    public boolean isDisplay() {
+        return display;
+    }
+    /** Присвоение значения параметра display
+     * @param display передавать true/false
+     */
+    public void setDisplay(boolean display) {
+        this.display = display;
+    }
+    /** Возможность получения параметра material вне класса
+     * @return material как значение массив char
+     */
+    public char[] getMaterial() {
+        return material;
+    }
+    /** Присвоение значения параметра material
+     * @param material передавать как массив char
+     */
+    public void setMaterial(char[] material) {
+        this.material = material;
+    }
+    /** Возможность получения параметра length вне класса
+     * @return length в милиметрах
+     */
+    public int getLength() {
+        return length;
+    }
+
+    /** Возможность получения параметра width вне класса
+     * @return width в милиметрах
+     */
+    public int getWidth() {
+        return width;
+    }
+    /** Возможность получения параметра height вне класса
+     * @return height в милиметрах
+     */
+    public int getHeight() {
+        return height;
+    }
+    /** Присвоение значения параметра material
+     * @param width,height,length передавать в метрах
+     */
+    public void setWidth(int length, int width, int height) {
+        this.width = width;
+        this.height = height;
+        this.length = length;
+    }
+    /** Возможность получения параметра power вне класса
+     * @return power в кВт
+     */
+    public double getPower() {
+        return power;
+    }
+    /** Присвоение значения параметра material
+     * @param power передавать в кВт
+     */
+    public void setPower(double power) {
+        this.power = power;
+    }
+    /** Возможность получения параметра typeRefrigerant вне класса
+     * @return typeRefrigerant как символ
+     */
+    public char getTypeRefrigerant() {
+        return typeRefrigerant;
+    }
+    /** Присвоение значения параметра material
+     * @param typeRefrigerant передавать как символ
+     */
+    public void setTypeRefrigerant(char typeRefrigerant) {
+        this.typeRefrigerant = typeRefrigerant;
+    }
+
+    /**Конструктор с обязательными параметрами для класса Condishka
+     * @param model передавать как силовое значение (2 цифры)
+     * @param mark передавать как строку
+     * @param length передавать в метрах (конвертация в мм)
+     * @param width передавать в метрах  (конвертация в мм)
+     * @param height передавать в метрах (конвертация в мм)
+     */
+    public Condishka(byte model, String mark, int length, int width, int height) {
+        this.model = model;
+        this.mark = mark;
+        this.length = length*1000;
+        this.width = width*1000;
+        this.height = height*1000;
+    }
+
+    @Override
+    public String toString() {
+        return "Condishka{" +
+                "model=" + model +
+                ", mark='" + mark + '\'' +
+                ", display=" + display +
+                ", material=" + Arrays.toString(material) +
+                ", length=" + length +
+                ", width=" + width +
+                ", height=" + height +
+                ", power=" + power +
+                ", typeRefrigerant=" + typeRefrigerant +
+                '}';
+    }
+
+    /**Метод для вывода в консоль значений переданых в конструктор
+     * с форматированием через printf
+     */
+    public void printCondishka() {
+        System.out.printf("Модель кондиционера - %d%n",this.model);
+        System.out.printf("Марка кондиционера - %s%n",this.mark);
+        System.out.printf("Размеры кондиционера - %d x %d x %dмм",this.length,this.width,this.height);
+    }
+
+}
